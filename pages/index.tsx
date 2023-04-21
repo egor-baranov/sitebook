@@ -1,6 +1,5 @@
 import styles from './index.module.css'
 import {MainLayout} from "../components/Layout"
-import {Card} from "../components/Card";
 import clsx from "clsx";
 import React, {ReactNode, useEffect, useState} from "react";
 import {useRouter} from "next/router";
