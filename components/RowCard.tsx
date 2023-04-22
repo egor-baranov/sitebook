@@ -17,9 +17,9 @@ import {color} from "@mui/system";
 import {Pill} from "./Pill";
 
 export const RowCard: React.FC<{
-    title: string, link: string,
+    title: string, link: string, labels: string[]
 }> =
-    ({title, link}) => {
+    ({title, link, labels}) => {
         const router = useRouter()
 
         function openProduct() {
@@ -42,9 +42,7 @@ export const RowCard: React.FC<{
                     </p>
 
                     <div className="flex flex-row self-stretch pt-2">
-                        <Pill label={"label"}/>
-                        <Pill label={"label"}/>
-                        <Pill label={"label"}/>
+                        {Array.from(labels).map((v) => <Pill key={v} label={v}/>)}
                     </div>
                 </div>
 

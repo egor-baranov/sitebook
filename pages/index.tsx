@@ -5,42 +5,89 @@ import React, {ReactNode, useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {RowCard} from "../components/RowCard";
 import {Pill} from "../components/Pill";
+import {SearchBar} from "../components/SearchBar";
+import {sites} from "../data/sites";
 
 // @ts-ignore
 const Home: React.FC = () => {
 
+    const [searchInput, setSearchInput] = useState("");
+
+    function getWindowSize() {
+        if (typeof window !== "undefined") {
+            const {innerWidth, innerHeight} = window;
+            return {innerWidth, innerHeight};
+        }
+
+        return {innerWidth: 0, innerHeight: 0};
+    }
+
+    const [windowSize, setWindowSize] = useState(getWindowSize());
+
+    useEffect(() => {
+        function handleWindowResize() {
+            setWindowSize(getWindowSize());
+        }
+
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
+
+    const isMobile = windowSize.innerWidth <= 800
+
     function group(title: string) {
+        const values = Array
+            .from(sites)
+            .filter(v =>
+                v.link.toLowerCase().includes(searchInput.toLowerCase())
+                || v.title.toLowerCase().includes(searchInput.toLowerCase())
+                || searchInput.length == 0
+            ).filter(v => v.category == title)
+            .sort(
+                (a, b) => {
+                    if (a.title < b.title) {
+                        return -1;
+                    }
+                    if (a.title > b.title) {
+                        return 1;
+                    }
+                    return 0;
+                }
+            )
+
         return (
             <div className="py-4">
                 <div className="flex flex-row pt-8">
                     <h1 className="text-3xl mb-4 font-bold mr-4"> {title} </h1>
-                    <Pill label={"6"}/>
+                    <Pill label={values.length.toString()}/>
                 </div>
 
-                <RowCard title={"Craftwork: UX/UI kits, illustrations, mockups, fonts and more"}
-                         link={"https://craftwork.design/"}/>
-                <RowCard title={"Intercom: The best of automation and human customer service"}
-                         link={"https://www.intercom.com/"}/>
-                <RowCard title={"Ocho - Building Wealth for Business Owners"}
-                         link={"https://ocho.com/"}/>
-                <RowCard title={"Blockchain Security & Smart Contract Auditing Services"}
-                         link={"https://mixbytes.io/"}/>
-                <RowCard title={"WE3. Web3 designers for ambitious startups"}
-                         link={"https://we3.co/"}/>
-                <RowCard title={"Intercom: The best of automation and human customer service"}
-                         link={"https://www.intercom.com/"}/>
+                {
+                    values.map(
+                        (v) =>
+                            (<RowCard key={v.link} title={v.title} link={v.link} labels={v.labels}/>))
+                }
             </div>
         )
     }
 
+    const handleChange = (e: { preventDefault: () => void; target: { value: React.SetStateAction<string>; }; }) => {
+        e.preventDefault();
+        setSearchInput(e.target.value);
+    };
+
     return (
-        <MainLayout className="mt-32">
+        <div className="mt-32">
+            <SearchBar isMobile={isMobile} inputHandler={handleChange} searchInput={searchInput}/>
 
-            {group("Software Design")}
-            {group("Crypto")}
-            {group("UI/UX")}
+            <MainLayout>
+                {Array.from(new Set(Array.from(sites).map(v => v.category)).values()).sort().map(v => group(v))}
+            </MainLayout>
+        </div>
 
-        </MainLayout>
     )
 }
 

@@ -129,7 +129,7 @@ export const MobileNavBar: React.FC = () => {
                 {/*{isOpen ? <DropdownMenu onHide={() => setIsOpen(false)}></DropdownMenu> : null}*/}
             </div>
 
-            <SearchBar isMobile={true}/>
+            {/*<SearchBar isMobile={true} inputHandler={() => {}}/>*/}
         </div>
     )
 }

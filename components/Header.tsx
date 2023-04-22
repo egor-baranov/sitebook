@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
                 {/*</HeaderLinkIcon>*/}
             </div>
 
-            <SearchBar isMobile={false}/>
+            {/*<SearchBar isMobile={false} inputHandler={() => {}}/>*/}
 
             {/*<ul className={clsx("menu flex items-center align-center", styles.menu)}>*/}
             {/*    <li className="menu-item">*/}
