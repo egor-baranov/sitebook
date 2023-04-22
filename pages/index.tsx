@@ -58,6 +58,10 @@ const Home: React.FC = () => {
                 }
             )
 
+        if (values.length == 0) {
+            return (<div/>)
+        }
+
         return (
             <div className="py-4">
                 <div className="flex flex-row pt-8">
