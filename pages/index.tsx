@@ -63,9 +63,9 @@ const Home: React.FC = () => {
         }
 
         return (
-            <div className="py-4">
-                <div className="flex flex-row pt-8">
-                    <h1 className="text-3xl mb-4 font-bold mr-4"> {title} </h1>
+            <div className={isMobile ? "py-4 px-0" : "py-4 px-32"}>
+                <div className="flex flex-row">
+                    <h1 className="text-3xl font-bold mr-4"> {title} </h1>
                     <Pill label={values.length.toString()}/>
                 </div>
 

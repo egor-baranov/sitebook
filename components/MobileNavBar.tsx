@@ -98,9 +98,15 @@ export const MobileNavBar: React.FC = () => {
 
     return (
         <div className={clsx("w-full fixed z-50 top-0 bg-white", styles.header)}>
-            <div className="mx-auto max-w-2xl flex flex-row items-center pr-2">
+            <div className="mx-auto max-w-2xl flex flex-row items-start pr-2">
 
-                <p className="mb-1 text-xl font-bold text-gray-900 dark:text-gray-900 text-left pt-8 pl-8"> Sitebook </p>
+                <a href={"https://sitebook.vercel.app"} className="mb-1 text-xl font-bold text-gray-900 dark:text-gray-900 text-left pt-8 pl-8">
+                    Sitebook
+                </a>
+
+                <a href={"https://kepler88d.dev"} className="mb-1 text-xl font-thin text-gray-900 dark:text-gray-900 text-left pt-8 pl-2">
+                    by kepler88d
+                </a>
 
                 {/*<button className="p-2 rounded-lg hover:bg-gray-100" onClick={() => setIsOpen(true)}>*/}
                 {/*    <Menu sx={{fontSize: "32px"}}/>*/}

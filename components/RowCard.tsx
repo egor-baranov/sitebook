@@ -28,7 +28,7 @@ export const RowCard: React.FC<{
 
         return (
             <div
-                className="px-2 py-4 my-4 max-w-2xl bg-gray-100 border border-gray-100 rounded-[16px] flex items-center">
+                className="px-2 py-4 my-4 max-w-full bg-gray-100 border border-gray-100 rounded-[16px] flex items-center">
 
                 <div className="flex-1 min-w-0 px-4 items-start">
 
@@ -48,11 +48,11 @@ export const RowCard: React.FC<{
 
                 <div className="flex flex-col self-stretch min-w-0 items-end pr-1">
                     <div className="flex flex-col">
-                        <a className="leading-none hover:bg-gray-100 flex-shrink-0 mb-4 cursor-pointer">
-                            <FavoriteBorder/>
-                        </a>
+                        {/*<a className="leading-none text-gray-500 hover:bg-gray-100 flex-shrink-0 mb-4 cursor-pointer">*/}
+                        {/*    <FavoriteBorder/>*/}
+                        {/*</a>*/}
 
-                        <a className="leading-none hover:bg-gray-100 flex-shrink-0 cursor-pointer" onMouseDown={() => router.push(link)}>
+                        <a className="leading-none text-gray-500 hover:bg-gray-100 flex-shrink-0 cursor-pointer" onMouseDown={() => router.push(link)}>
                             <OpenInNewOutlined/>
                         </a>
                     </div>
