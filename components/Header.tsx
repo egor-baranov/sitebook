@@ -30,14 +30,14 @@ export const Header: React.FC = () => {
             <div className="mx-auto max-w-2xl flex flex-row items-center pr-2">
                 <div className="flex-grow"></div>
 
-                <Link href="/">
-                    <a className="py-2 px-4 font-bold flex-shrink-0 hover:bg-gray-100 rounded-lg">
-                        New
-                    </a>
-                </Link>
-                <HeaderLink link="/#caterogies" text="Categories" />
-                <HeaderLink link="/#favorite" text="Favorite" />
-                <HeaderLink link="/#about" text="About" />
+                {/*<Link href="/">*/}
+                {/*    <a className="py-2 px-4 font-bold flex-shrink-0 hover:bg-gray-100 rounded-lg">*/}
+
+                {/*    </a>*/}
+                {/*</Link>*/}
+                {/*<HeaderLink link="/#caterogies" text="" />*/}
+                {/*<HeaderLink link="/#favorite" text="" />*/}
+                {/*<HeaderLink link="/#about" text="" />*/}
 
                 <div className="flex-grow"></div>
 
