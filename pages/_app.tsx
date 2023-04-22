@@ -20,7 +20,7 @@ export default function MyApp({Component, pageProps}: AppProps) {
                 <meta name="theme-color" content="#FFFFFF"/>
             </Head>
             <Component {...pageProps} > </Component>
-            <Footer/>
+            {/*<Footer/>*/}
         </HeaderLayout>
     )
 }

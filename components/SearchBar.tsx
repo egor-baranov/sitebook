@@ -22,7 +22,7 @@ export const SearchBar: React.FC<{isMobile: boolean, inputHandler: any, searchIn
                 <input type="search" id="default-search"
                        onChange={inputHandler}
                        value={searchInput}
-                       className="block w-full my-4 py-2 px-4 pl-10 focus:outline-0 text-sm text-gray-900 rounded-full bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white"
+                       className="block w-full my-4 py-2 px-4 pl-10 focus:outline-0 text-xl text-gray-900 rounded-full bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white"
                        placeholder="Search" required>
 
                 </input>
