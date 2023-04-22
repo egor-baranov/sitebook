@@ -4,14 +4,19 @@ import clsx from "clsx";
 import React, {ReactNode, useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {RowCard} from "../components/RowCard";
+import {Pill} from "../components/Pill";
 
 // @ts-ignore
 const Home: React.FC = () => {
 
     function group(title: string) {
         return (
-            <div className="py-8">
-                <h1 className="text-3xl mb-4 pt-8 font-bold"> {title} </h1>
+            <div className="py-4">
+                <div className="flex flex-row pt-8">
+                    <h1 className="text-3xl mb-4 font-bold mr-4"> {title} </h1>
+                    <Pill label={"6"}/>
+                </div>
+
                 <RowCard title={"Craftwork: UX/UI kits, illustrations, mockups, fonts and more"}
                          link={"https://craftwork.design/"}/>
                 <RowCard title={"Intercom: The best of automation and human customer service"}
@@ -29,7 +34,7 @@ const Home: React.FC = () => {
     }
 
     return (
-        <MainLayout>
+        <MainLayout className="mt-32">
 
             {group("Software Design")}
             {group("Crypto")}

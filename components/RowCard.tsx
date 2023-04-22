@@ -14,6 +14,7 @@ import React, {ReactNode, useState} from "react"
 import {Button} from "@mui/material";
 import {useRouter} from "next/router";
 import {color} from "@mui/system";
+import {Pill} from "./Pill";
 
 export const RowCard: React.FC<{
     title: string, link: string,
@@ -39,6 +40,12 @@ export const RowCard: React.FC<{
                     <p className="mb-1 font-normal text-gray-400 dark:text-gray-900 text-left">
                         {link}
                     </p>
+
+                    <div className="flex flex-row self-stretch pt-2">
+                        <Pill label={"label"}/>
+                        <Pill label={"label"}/>
+                        <Pill label={"label"}/>
+                    </div>
                 </div>
 
                 <div className="flex flex-col self-stretch min-w-0 items-end pr-1">

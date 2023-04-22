@@ -15,6 +15,7 @@ import React, {ReactNode, useState} from "react"
 import styles from "./DropdownMenu.module.css"
 import {HeaderLink, HeaderLinkIcon} from "./Header";
 import {useRouter} from "next/router";
+import {SearchBar} from "./SearchBar";
 
 const DropdownButton: React.FC = () => {
     return (
@@ -99,32 +100,36 @@ export const MobileNavBar: React.FC = () => {
         <div className={clsx("w-full fixed z-50 top-0 bg-white", styles.header)}>
             <div className="mx-auto max-w-2xl flex flex-row items-center pr-2">
 
-                <button className="p-2 rounded-lg hover:bg-gray-100" onClick={() => setIsOpen(true)}>
-                    <Menu sx={{fontSize: "32px"}}/>
-                </button>
+                <p className="mb-1 text-xl font-bold text-gray-900 dark:text-gray-900 text-left pt-8 pl-8"> Sitebook </p>
 
-                <div className="flex-grow"></div>
+                {/*<button className="p-2 rounded-lg hover:bg-gray-100" onClick={() => setIsOpen(true)}>*/}
+                {/*    <Menu sx={{fontSize: "32px"}}/>*/}
+                {/*</button>*/}
 
-                <Link href="/cart">
-                    <a className="p-2 rounded-lg leading-none hover:bg-gray-100 flex-shrink-0" aria-label="Корзина">
-                        <ShoppingBagOutlined sx={{fontSize: "32px"}}/>
-                    </a>
-                </Link>
+                {/*<div className="flex-grow"></div>*/}
 
-                <Link href="/favorite">
-                    <a className="p-2 m-2 rounded-lg leading-none hover:bg-gray-100 flex-shrink-0" aria-label="Избранное">
-                        <FavoriteBorder sx={{fontSize: "32px"}}/>
-                    </a>
-                </Link>
+                {/*<Link href="/cart">*/}
+                {/*    <a className="p-2 rounded-lg leading-none hover:bg-gray-100 flex-shrink-0" aria-label="Корзина">*/}
+                {/*        <ShoppingBagOutlined sx={{fontSize: "32px"}}/>*/}
+                {/*    </a>*/}
+                {/*</Link>*/}
 
-                <Link href="/search">
-                    <a className="p-2 rounded-lg leading-none hover:bg-gray-100 flex-shrink-0" aria-label="Поиск">
-                        <Search sx={{fontSize: "32px"}}/>
-                    </a>
-                </Link>
+                {/*<Link href="/favorite">*/}
+                {/*    <a className="p-2 m-2 rounded-lg leading-none hover:bg-gray-100 flex-shrink-0" aria-label="Избранное">*/}
+                {/*        <FavoriteBorder sx={{fontSize: "32px"}}/>*/}
+                {/*    </a>*/}
+                {/*</Link>*/}
 
-                {isOpen ? <DropdownMenu onHide={() => setIsOpen(false)}></DropdownMenu> : null}
+                {/*<Link href="/search">*/}
+                {/*    <a className="p-2 rounded-lg leading-none hover:bg-gray-100 flex-shrink-0" aria-label="Поиск">*/}
+                {/*        <Search sx={{fontSize: "32px"}}/>*/}
+                {/*    </a>*/}
+                {/*</Link>*/}
+
+                {/*{isOpen ? <DropdownMenu onHide={() => setIsOpen(false)}></DropdownMenu> : null}*/}
             </div>
+
+            <SearchBar isMobile={true}/>
         </div>
     )
 }

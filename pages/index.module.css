@@ -11,3 +11,8 @@
         justify-self: start;
     }
 }
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    outline: red!important;
+}

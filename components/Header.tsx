@@ -4,6 +4,7 @@ import Link from "next/link"
 import React, { ReactNode } from "react"
 import styles from "./Header.module.css"
 import {MobileNavBar} from "./MobileNavBar";
+import {SearchBar} from "./SearchBar";
 
 export const HeaderLink: React.FC<{ link: string; text: string }> = ({ link, text }) => {
     return (
@@ -27,28 +28,31 @@ export const Header: React.FC = () => {
     return (
         <div className={clsx("w-full fixed z-50 top-0 bg-white", styles.header)}>
             <div className="mx-auto max-w-2xl flex flex-row items-center pr-2">
+                <div className="flex-grow"></div>
+
                 <Link href="/">
                     <a className="py-2 px-4 font-bold flex-shrink-0 hover:bg-gray-100 rounded-lg">
-                        Новинки
+                        New
                     </a>
                 </Link>
-                <HeaderLink link="/#shirts" text="Футболки" />
-                <HeaderLink link="/#hoodies" text="Толстовки" />
-                <HeaderLink link="/#accessories" text="Аксессуары" />
-                <HeaderLink link="/#sales" text="Скидки" />
+                <HeaderLink link="/#caterogies" text="Categories" />
+                <HeaderLink link="/#favorite" text="Favorite" />
+                <HeaderLink link="/#about" text="About" />
 
                 <div className="flex-grow"></div>
 
-                <HeaderLinkIcon link="/cart" label="Корзина">
-                    <ShoppingBagOutlined />
-                </HeaderLinkIcon>
-                <HeaderLinkIcon link="/favorite" label="Избранное">
-                    <FavoriteBorder />
-                </HeaderLinkIcon>
-                <HeaderLinkIcon link="/search" label="Поиск">
-                    <Search />
-                </HeaderLinkIcon>
+                {/*<HeaderLinkIcon link="/cart" label="Корзина">*/}
+                {/*    <ShoppingBagOutlined />*/}
+                {/*</HeaderLinkIcon>*/}
+                {/*<HeaderLinkIcon link="/favorite" label="Избранное">*/}
+                {/*    <FavoriteBorder />*/}
+                {/*</HeaderLinkIcon>*/}
+                {/*<HeaderLinkIcon link="/search" label="Поиск">*/}
+                {/*    <Search />*/}
+                {/*</HeaderLinkIcon>*/}
             </div>
+
+            <SearchBar isMobile={false}/>
 
             {/*<ul className={clsx("menu flex items-center align-center", styles.menu)}>*/}
             {/*    <li className="menu-item">*/}
