@@ -65,8 +65,8 @@ const Home: React.FC = () => {
         return (
             <div className={isMobile ? "py-4 px-0" : "py-4 px-32"}>
                 <div className="flex flex-row">
-                    <h1 className="text-3xl font-bold mr-4"> {title} </h1>
-                    <Pill label={values.length.toString()}/>
+                    <h1 className="text-3xl font-bold mr-2"> {title} </h1>
+                    <div className="pt-2"> <Pill label={values.length.toString()}/> </div>
                 </div>
 
                 {
