@@ -94,7 +94,7 @@ const Home: React.FC = () => {
         .filter(v => v[1].length > 0)
 
     return (
-        <div className="mt-32">
+        <div className={isMobile ? "mt-32 px-4" : "mt-32 px-16"}>
             <SearchBar isMobile={isMobile} inputHandler={handleChange} searchInput={searchInput}/>
 
             <MainLayout>

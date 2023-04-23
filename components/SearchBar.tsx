@@ -8,7 +8,7 @@ export const SearchBar: React.FC<{isMobile: boolean, inputHandler: any, searchIn
 
     return (
 
-        <form className={isMobile ? "w-full fixed top-16 bg-white flex flex-row justify-center px-8": "w-full fixed top-0 bg-white flex flex-row justify-center px-40"  }>
+        <form className={isMobile ? "w-full fixed top-16 bg-white flex flex-row justify-center px-4": "w-full fixed top-0 bg-white flex flex-row justify-center px-24"  }>
             {/*<label htmlFor="default-search"*/}
             {/*       className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>*/}
             <div className={isMobile ? "relative w-full justify-center" : "relative w-full justify-center"}>
