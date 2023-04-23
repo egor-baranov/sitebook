@@ -122,7 +122,7 @@ export const sites = [
     {
         title: "Cookie-free and Privacy-friendly Web Analytics - Pirsch Analytics",
         link: "https://pirsch.io/",
-        labels: ["software design", "b2b", "devtools"],
+        labels: ["software design", "b2b"],
         category: "Software Design"
     },
     {
@@ -164,7 +164,7 @@ export const sites = [
     {
         title: "Cursor – Refactor, understand, and write code effortlessly with Cursor.",
         link: "https://www.cursor.so/",
-        labels: ["software design", "devtools", "ai", "productivity"],
+        labels: ["devtools", "ai", "productivity"],
         category: "AI"
     },
     {
