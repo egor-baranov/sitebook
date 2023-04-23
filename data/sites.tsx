@@ -48,7 +48,7 @@ export const sites = [
         category: "UI/UX"
     },
     {
-        title: "Брендбук компании МТС",
+        title: "MTS company brand book",
         link: "https://brand.mts.ru/",
         labels: ["ui/ux", "design"],
         category: "UI/UX"
@@ -84,13 +84,13 @@ export const sites = [
         category: "Other"
     },
     {
-        title: "Илья Харитонов – графический и продуктовый дизайнер",
-        link: "https://ilyakharitonov.xyz/ru/",
+        title: "Ilya Kharitonov – graphic and product designer",
+        link: "https://ilyakharitonov.xyz/en/",
         labels: ["fun"],
         category: "Other"
     },
     {
-        title: "Шедеврум — приложение для генерации картинок с помощью нейросети",
+        title: "Shedevrum — image generating AI mobile application",
         link: "https://shedevrum.ru/",
         labels: ["fun", "ai"],
         category: "AI"

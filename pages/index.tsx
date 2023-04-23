@@ -1,8 +1,5 @@
-import styles from './index.module.css'
 import {MainLayout} from "../components/Layout"
-import clsx from "clsx";
-import React, {ReactNode, useEffect, useState} from "react";
-import {useRouter} from "next/router";
+import React, {useEffect, useState} from "react";
 import {RowCard} from "../components/RowCard";
 import {Pill} from "../components/Pill";
 import {SearchBar} from "../components/SearchBar";
@@ -38,14 +35,14 @@ const Home: React.FC = () => {
 
     const isMobile = windowSize.innerWidth <= 800
 
-    function group(title: string) {
-        const values = Array
+    function items(title: string | null) {
+        return Array
             .from(sites)
             .filter(v =>
                 v.link.toLowerCase().includes(searchInput.toLowerCase())
                 || v.title.toLowerCase().includes(searchInput.toLowerCase())
                 || searchInput.length == 0
-            ).filter(v => v.category == title)
+            ).filter(v => v.category == title || title === null)
             .sort(
                 (a, b) => {
                     if (a.title < b.title) {
@@ -57,21 +54,19 @@ const Home: React.FC = () => {
                     return 0;
                 }
             )
+    }
 
-        if (values.length == 0) {
-            return (<div/>)
-        }
-
+    function group(title: any, values: any) {
         return (
-            <div className={isMobile ? "py-4 px-0" : "py-4 px-32"}>
+            <div className={isMobile ? "py-4" : "py-4"}>
                 <div className="flex flex-row">
-                    <h1 className="text-3xl font-bold mr-2"> {title} </h1>
-                    <div className="pt-2"> <Pill label={values.length.toString()}/> </div>
+                    <h1 className="text-3xl font-bold mr-2"> {categoryEmoji.get(title)!! + " " + title} </h1>
+                    <div className="pt-2"><Pill label={values.length.toString()}/></div>
                 </div>
 
                 {
                     values.map(
-                        (v) =>
+                        (v: any) =>
                             (<RowCard key={v.link} title={v.title} link={v.link} labels={v.labels}/>))
                 }
             </div>
@@ -83,12 +78,33 @@ const Home: React.FC = () => {
         setSearchInput(e.target.value);
     };
 
+    const categoryEmoji = new Map<string, string>([
+        ["Software Design", "👨‍💻"],
+        ["AI", "🤖"],
+        ["UI/UX", "🎨"],
+        ["Crypto", "💵"],
+        ["Tech", "💻"],
+        ["Productivity", "🧰"],
+        ["Other", "🍔"]
+    ]);
+
+    const displayValues = Array.from(
+        categoryEmoji.keys()
+    ).map(v => [v, items(v)])
+        .filter(v => v[1].length > 0)
+
     return (
         <div className="mt-32">
             <SearchBar isMobile={isMobile} inputHandler={handleChange} searchInput={searchInput}/>
 
-            <MainLayout>
-                {Array.from(new Set(Array.from(sites).map(v => v.category)).values()).sort().map(v => group(v))}
+            <MainLayout className={isMobile ? "mx-4" : "mx-16"}>
+                {
+                    displayValues.length > 0 ?
+                        <div className={isMobile ? "grid grid-cols-1" : "grid grid-cols-2 gap-8"}>
+                            {displayValues.map(v => group(v[0], v[1]))}
+                        </div>
+                        : <div className="text-3xl font-bold mr-2 flex flex-col items-center justify-center"> Nothing was found, try another query </div>
+                }
             </MainLayout>
         </div>
 
