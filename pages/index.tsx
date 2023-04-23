@@ -103,7 +103,9 @@ const Home: React.FC = () => {
                         <div className={isMobile ? "grid grid-cols-1" : "grid grid-cols-2 gap-8"}>
                             {displayValues.map(v => group(v[0], v[1]))}
                         </div>
-                        : <div className="text-3xl font-bold mr-2 flex flex-col items-center justify-center"> Nothing was found, try another query </div>
+                        : <div className="text-3xl font-bold mr-2 flex flex-col items-center justify-center">
+                            Nothing was found, try another query
+                        </div>
                 }
             </MainLayout>
         </div>
