@@ -97,7 +97,7 @@ const Home: React.FC = () => {
         <div className="mt-32">
             <SearchBar isMobile={isMobile} inputHandler={handleChange} searchInput={searchInput}/>
 
-            <MainLayout className={isMobile ? "mx-4" : "mx-16"}>
+            <MainLayout>
                 {
                     displayValues.length > 0 ?
                         <div className={isMobile ? "grid grid-cols-1" : "grid grid-cols-2 gap-8"}>
