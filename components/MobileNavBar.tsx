@@ -100,8 +100,8 @@ export const MobileNavBar: React.FC = () => {
         <div className={clsx("w-full fixed z-50 top-0 bg-white", styles.header)}>
             <div className="mx-auto max-w-2xl flex flex-row items-start pr-2">
 
-                <a href={"https://sitebook.vercel.app"} className="mb-1 text-xl font-bold text-gray-900 dark:text-gray-900 text-left pt-8 pl-8">
-                    Sitebook
+                <a href={"https://thenavigator.tech"} className="mb-1 text-xl font-bold text-gray-900 dark:text-gray-900 text-left pt-8 pl-8">
+                    The navigator
                 </a>
 
                 <a href={"https://kepler88d.dev"} className="mb-1 text-xl font-thin text-gray-900 dark:text-gray-900 text-left pt-8 pl-2">

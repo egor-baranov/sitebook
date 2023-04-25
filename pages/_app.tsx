@@ -9,7 +9,7 @@ export default function MyApp({Component, pageProps}: AppProps) {
     return (
         <HeaderLayout>
             <Head>
-                <title>Sitebook</title>
+                <title>The navigator</title>
                 <meta name="application-name" content="sitebook"/>
                 <meta name="apple-mobile-web-app-capable" content="yes"/>
                 <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
