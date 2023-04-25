@@ -32,12 +32,12 @@ export const RowCard: React.FC<{
 
                 <div className="flex-1 min-w-0 px-4 items-start">
 
-                    <p className="mb-1 font-bold text-gray-900 dark:text-gray-900 text-left">
+                    <p className="mb-1 font-semibold text-gray-900 dark:text-gray-900 text-left">
                         {title}
 
                     </p>
 
-                    <p className="mb-1 font-normal text-gray-400 dark:text-gray-900 text-left">
+                    <p className="mb-1 font-light test-xs text-gray-400 dark:text-gray-900 text-left">
                         {link}
                     </p>
 

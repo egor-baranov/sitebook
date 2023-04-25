@@ -1,14 +1,10 @@
-import {Favorite, FavoriteBorder, Search, ShoppingBagOutlined, ShoppingCart} from "@mui/icons-material"
-import clsx from "clsx"
-import Link from "next/link"
-import Image from "next/image"
-import React, {ReactNode} from "react"
+import React from "react"
 
 export const SearchBar: React.FC<{isMobile: boolean, inputHandler: any, searchInput: any}> = ({isMobile, inputHandler, searchInput}) => {
 
     return (
 
-        <form className={isMobile ? "w-full fixed top-16 bg-white flex flex-row justify-center px-4": "w-full fixed top-0 bg-white flex flex-row justify-center px-24"  }>
+        <form className={isMobile ? "w-full fixed top-16 bg-white pr-8": "w-full fixed top-0 bg-white pr-32" }>
             {/*<label htmlFor="default-search"*/}
             {/*       className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>*/}
             <div className={isMobile ? "relative w-full justify-center" : "relative w-full justify-center"}>
@@ -22,7 +18,7 @@ export const SearchBar: React.FC<{isMobile: boolean, inputHandler: any, searchIn
                 <input type="search" id="default-search"
                        onChange={inputHandler}
                        value={searchInput}
-                       className="block w-full my-4 py-2 px-4 pl-10 focus:outline-0 text-xl text-gray-900 rounded-full bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white"
+                       className="block w-full my-4 py-4 px-4 pl-10 focus:outline-0 text-xl text-gray-900 rounded-full bg-gray-50 dark:bg-gray-50 dark:placeholder-gray-900 dark:text-gray-900"
                        placeholder="Search" required>
 
                 </input>
