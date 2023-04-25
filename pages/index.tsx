@@ -67,7 +67,7 @@ const Home: React.FC = () => {
                 {
                     values.map(
                         (v: any) =>
-                            (<RowCard key={v.link} title={v.title} link={v.link} labels={v.labels}/>))
+                            (<RowCard key={v.link} name={v.name} title={v.title} link={v.link} labels={v.labels}/>))
                 }
             </div>
         )
@@ -94,22 +94,37 @@ const Home: React.FC = () => {
         .filter(v => v[1].length > 0)
 
     return (
-        <div className={isMobile ? "mt-32 px-4" : "mt-32 px-16"}>
-            <SearchBar isMobile={isMobile} inputHandler={handleChange} searchInput={searchInput}/>
+        <div>
+            <div className={isMobile ? "mt-32 px-4" : "mt-32 px-16"}>
 
-            <MainLayout>
-                {
-                    displayValues.length > 0 ?
-                        <div className={isMobile ? "grid grid-cols-1" : "grid grid-cols-2 gap-8"}>
-                            {displayValues.map(v => group(v[0], v[1]))}
-                        </div>
-                        : <div className="text-xl font-semibold mr-2 flex flex-col items-center justify-center">
-                            Nothing was found, try another query
-                        </div>
-                }
-            </MainLayout>
+                <SearchBar isMobile={isMobile} inputHandler={handleChange} searchInput={searchInput}/>
+
+                <MainLayout>
+                    {
+                        displayValues.length > 0 ?
+                            <div className={isMobile ? "grid grid-cols-1" : "grid grid-cols-2 gap-8"}>
+                                {displayValues.map(v => group(v[0], v[1]))}
+                            </div>
+                            : <div className="text-xl font-semibold mr-2 flex flex-col items-center justify-center">
+                                Nothing was found, try another query
+                            </div>
+                    }
+                </MainLayout>
+            </div>
+
+            {isMobile ? <div/> : <div className="fixed top-4 pl-8 flex flex-row items-start">
+
+                <a href={"https://thenavigator.tech"}
+                   className="mb-1 text-xl font-bold text-gray-900 dark:text-gray-900 text-left py-3 pl-8">
+                    The navigator
+                </a>
+
+                <a href={"https://kepler88d.dev"}
+                   className="mb-1 text-xl font-thin text-gray-900 dark:text-gray-900 text-left py-3 pl-2">
+                    by kepler88d
+                </a>
+            </div> }
         </div>
-
     )
 }
 

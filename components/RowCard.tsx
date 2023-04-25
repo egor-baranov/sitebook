@@ -17,24 +17,24 @@ import {color} from "@mui/system";
 import {Pill} from "./Pill";
 
 export const RowCard: React.FC<{
-    title: string, link: string, labels: string[]
+    name: string, title: string, link: string, labels: string[]
 }> =
-    ({title, link, labels}) => {
+    ({name, title, link, labels}) => {
         const router = useRouter()
 
-        function openProduct() {
-            router.push("/product/")
+        function openSite() {
+            router.push("/site/" + name.toLowerCase().split(" ").join("-"))
         }
 
         return (
             <div
-                className="px-2 py-4 my-4 max-w-full bg-gray-100 border border-gray-100 rounded-[16px] flex items-center">
+                onMouseDown={openSite}
+                className="px-2 py-4 my-4 max-w-full bg-gray-100 hover:bg-gray-200 border border-gray-100 rounded-[16px] flex items-center cursor-pointer">
 
                 <div className="flex-1 min-w-0 px-4 items-start">
 
                     <p className="mb-1 font-semibold text-gray-900 dark:text-gray-900 text-left">
                         {title}
-
                     </p>
 
                     <p className="mb-1 font-light test-xs text-gray-400 dark:text-gray-900 text-left">
@@ -52,7 +52,7 @@ export const RowCard: React.FC<{
                         {/*    <FavoriteBorder/>*/}
                         {/*</a>*/}
 
-                        <a className="leading-none text-gray-500 hover:bg-gray-100 flex-shrink-0 cursor-pointer" onMouseDown={() => router.push(link)}>
+                        <a className="leading-none text-gray-500 hover:bg-gray-300 flex-shrink-0 cursor-pointer rounded-sm" onMouseDown={() => router.push(link)}>
                             <OpenInNewOutlined/>
                         </a>
                     </div>
