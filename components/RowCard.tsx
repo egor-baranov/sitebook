@@ -28,10 +28,10 @@ export const RowCard: React.FC<{
 
         return (
             <div
-                onMouseDown={openSite}
+
                 className="px-2 py-4 my-4 max-w-full bg-gray-100 hover:bg-gray-200 border border-gray-100 rounded-[16px] flex items-center cursor-pointer">
 
-                <div className="flex-1 min-w-0 px-4 items-start">
+                <div className="flex-1 min-w-0 px-4 items-start" onMouseDown={openSite}>
 
                     <p className="mb-1 font-semibold text-gray-900 dark:text-gray-900 text-left">
                         {title}
