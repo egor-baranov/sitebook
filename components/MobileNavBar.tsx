@@ -108,7 +108,7 @@ export const MobileNavBar: React.FC = () => {
                     by kepler88d
                 </a>
 
-                <button className="fixed top-0 right-0 p-2 rounded-lg hover:bg-gray-100" onClick={() => setIsOpen(true)}>
+                <button className="fixed top-0 right-4 p-2 rounded-lg hover:bg-gray-100" onClick={() => setIsOpen(true)}>
                     <Menu sx={{fontSize: "32px"}}/>
                 </button>
 
