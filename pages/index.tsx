@@ -95,7 +95,7 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            <div className={isMobile ? "mt-8 px-4" : "mt-8 px-16"}>
+            <div className={isMobile ? "mt-16 px-4" : "mt-16 px-16"}>
 
                 <SearchBar isMobile={isMobile} inputHandler={handleChange} searchInput={searchInput}/>
 
