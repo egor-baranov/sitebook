@@ -4,7 +4,7 @@ export const SearchBar: React.FC<{isMobile: boolean, inputHandler: any, searchIn
 
     return (
 
-        <form className={isMobile ? "w-full fixed top-10 bg-white pr-8": "w-full fixed top-0 bg-white pr-32 pl-72" }>
+        <form className={isMobile ? "w-full bg-white pr-8": "w-full bg-white pr-32 pl-72" }>
             {/*<label htmlFor="default-search"*/}
             {/*       className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>*/}
             <div className={isMobile ? "relative w-full justify-center" : "relative w-full justify-center"}>
