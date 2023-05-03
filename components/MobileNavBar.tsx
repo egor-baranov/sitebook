@@ -36,13 +36,6 @@ const DropdownMenu: React.FC<{ onHide: Function }> = ({onHide}) => {
         <div className={clsx("w-full fixed bg-black/60", styles.menu)} onMouseDown={() => onHide()}>
             <div className="relative h-full flex-col mb-24 bg-white" onMouseDown={(e) => e.stopPropagation()}>
                 <div className="flex flex-col pt-16">
-                    <button className="my-2 mx-4 py-2 px-4 rounded-lg hover:bg-gray-100 flex-shrink-0"
-                            onClick={() => {
-                                router.push("/");
-                                onHide()
-                            }}>
-                        Новинки
-                    </button>
 
                     <button className="my-2 mx-4 py-2 px-4 rounded-lg hover:bg-gray-100 flex-shrink-0"
                             onClick={() => {
