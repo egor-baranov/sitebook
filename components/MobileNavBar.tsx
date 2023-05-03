@@ -49,7 +49,7 @@ const DropdownMenu: React.FC<{ onHide: Function }> = ({onHide}) => {
                                 router.push("/#shirts");
                                 onHide()
                             }}>
-                        Футболки
+                        Sign up
                     </button>
 
                     <button className="my-2 mx-4 py-2 px-4 rounded-lg hover:bg-gray-100 flex-shrink-0"
@@ -57,7 +57,7 @@ const DropdownMenu: React.FC<{ onHide: Function }> = ({onHide}) => {
                                 router.push("/#hoodies");
                                 onHide()
                             }}>
-                        Толстовки
+                        Log in
                     </button>
 
                     <button className="my-2 mx-4 py-2 px-4 rounded-lg hover:bg-gray-100 flex-shrink-0"
@@ -65,7 +65,7 @@ const DropdownMenu: React.FC<{ onHide: Function }> = ({onHide}) => {
                                 router.push("/#accessories");
                                 onHide()
                             }}>
-                        Аксессуары
+                        About
                     </button>
 
                     <button className="my-2 mx-4 py-2 px-4 rounded-lg hover:bg-gray-100 flex-shrink-0"
@@ -73,7 +73,7 @@ const DropdownMenu: React.FC<{ onHide: Function }> = ({onHide}) => {
                                 router.push("/#sales");
                                 onHide()
                             }}>
-                        Скидки
+                        Support
                     </button>
                 </div>
 
@@ -104,9 +104,9 @@ export const MobileNavBar: React.FC = () => {
                     The navigator
                 </a>
 
-                <a href={"https://kepler88d.dev"} className="mb-1 text-xl font-thin text-gray-900 dark:text-gray-900 text-left py-3 pl-2">
+                {/*<a href={"https://kepler88d.dev"} className="mb-1 text-xl font-thin text-gray-900 dark:text-gray-900 text-left py-3 pl-2">
                     by kepler88d
-                </a>
+                </a>*/}
 
                 <button className="fixed top-0 right-2 p-2 rounded-lg hover:bg-gray-100" onClick={() => setIsOpen(true)}>
                     <Menu sx={{fontSize: "32px"}}/>
