@@ -108,9 +108,9 @@ export const MobileNavBar: React.FC = () => {
                     by kepler88d
                 </a>
 
-                {/*<button className="p-2 rounded-lg hover:bg-gray-100" onClick={() => setIsOpen(true)}>*/}
-                {/*    <Menu sx={{fontSize: "32px"}}/>*/}
-                {/*</button>*/}
+                <button className="fixed top-0 right-0 p-2 rounded-lg hover:bg-gray-100" onClick={() => setIsOpen(true)}>
+                    <Menu sx={{fontSize: "32px"}}/>
+                </button>
 
                 {/*<div className="flex-grow"></div>*/}
 
@@ -132,7 +132,7 @@ export const MobileNavBar: React.FC = () => {
                 {/*    </a>*/}
                 {/*</Link>*/}
 
-                {/*{isOpen ? <DropdownMenu onHide={() => setIsOpen(false)}></DropdownMenu> : null}*/}
+                {isOpen ? <DropdownMenu onHide={() => setIsOpen(false)}></DropdownMenu> : null}
             </div>
 
             {/*<SearchBar isMobile={true} inputHandler={() => {}}/>*/}
