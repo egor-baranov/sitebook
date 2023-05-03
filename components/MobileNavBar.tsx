@@ -70,7 +70,7 @@ const DropdownMenu: React.FC<{ onHide: Function }> = ({onHide}) => {
                     </button>
                 </div>
 
-                <a className="flex-1 absolute top-0 right-0 mx-auto leading-none text-black flex-shrink-0">
+                <a className="flex-1 absolute top-0 right-2 mx-auto leading-none text-black flex-shrink-0">
                     <button className="p-2 rounded-lg hover:bg-gray-100" onClick={() => onHide()}>
                         <Close sx={{fontSize: "32px"}}/>
                     </button>
@@ -94,7 +94,7 @@ export const MobileNavBar: React.FC = () => {
             <div className="mx-auto max-w-2xl flex flex-row items-start pr-2">
 
                 <a href={"https://thenavigator.tech"} className="mb-1 text-xl font-bold text-gray-900 dark:text-gray-900 text-left py-3 pl-8">
-                    The navigator
+                    The Navigator
                 </a>
 
                 {/*<a href={"https://kepler88d.dev"} className="mb-1 text-xl font-thin text-gray-900 dark:text-gray-900 text-left py-3 pl-2">
